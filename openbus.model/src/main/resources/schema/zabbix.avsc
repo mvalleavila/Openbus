@@ -1,0 +1,62 @@
+{
+  "namespace": "br.com.inmetrics.openbus.model.avro",
+  "type": "record",
+  "name": "RequestAvro",
+  "doc": "Logs for not so important stuff.",
+  "fields": [
+	    {
+			"name": "request", 
+			"type": "string"
+		},
+	    {
+			"name": "host", 
+			"type": "string"
+		},
+		{
+			"name": "host_metadata", 
+			"type": ["string", "null"]
+		},
+		{
+			"name": "ip", 
+			"type": ["string", "null"]
+		},
+		{
+			"name": "port", 
+			"type": ["string", "null"]
+		},
+		{
+			"name": "data", 
+			"type": {
+				"type": "array", 
+				"items": { 
+		  			"name": "AgentDataAvro",
+		  			"type": "record",
+		  			"aliases": ["AgentData"],
+		 			"fields" : [
+		    			{"name": "host", "type": "string"},
+		    			{"name": "host_metadata", "type": ["string", "null"]},
+		    			{"name": "key", "type": "string"},
+		    			{"name": "value", "type": "string"},
+		    			{"name": "lastlogsize", "type": ["string", "null"]},
+		    			{"name": "mtime", "type": ["string", "null"]},
+		    			{"name": "timestamp", "type": ["string", "null"]},
+		    			{"name": "source", "type": ["string", "null"]},
+		    			{"name": "severity", "type": ["string", "null"]},
+		    			{"name": "eventid", "type": ["string", "null"]},
+		    			{"name": "state", "type": ["string", "null"]},
+		    			{"name": "clock", "type": "string"},
+		    			{"name": "ns", "type": ["string", "null"]}
+		  			]
+				}
+			}
+		},
+		{
+			"name": "clock",
+			"type": "long"
+		},
+		{
+			"name": "ns",
+			"type": ["string", "null"]
+		}
+	]
+}
