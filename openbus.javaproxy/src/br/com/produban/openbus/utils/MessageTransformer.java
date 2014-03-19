@@ -13,6 +13,8 @@ import com.google.gson.JsonSyntaxException;
 
 public class MessageTransformer {
 
+	private static int prefix = 13;
+	
 	private static Request parseRequest(String input) {
 		return new Gson().fromJson(input, Request.class);
 	}
@@ -36,7 +38,7 @@ public class MessageTransformer {
 		
 		if (!json.isEmpty()) {
 			try {
-				json = json.substring(json.indexOf("{"), json.lastIndexOf("}") + 1);
+				json = json.substring(prefix, json.length());
 				request = MessageTransformer.parseRequest(json);
 			} catch (JsonSyntaxException e) {
 //				e.printStackTrace();
@@ -48,7 +50,7 @@ public class MessageTransformer {
 				return null;
 			}
 
-			System.out.println(request);
+//			System.out.println(request);
 		}
 		return request;
 	}
