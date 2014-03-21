@@ -38,5 +38,11 @@ Ajustes:
 		log4j.xml
 		runJob.sh
 		
+7. Subir a versão do Hadoop Client para 2.2.0 no projeto Camus:
+			<dependency>
+				<groupId>org.apache.hadoop</groupId>
+				<artifactId>hadoop-client</artifactId>
+				<version>2.2.0</version>
+			</dependency>
 
 		
