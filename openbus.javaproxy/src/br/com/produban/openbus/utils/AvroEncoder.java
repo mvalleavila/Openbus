@@ -32,8 +32,8 @@ public class AvroEncoder {
 		crc32.reset();
 		crc32.update(schema.toString().getBytes());
 
-		ByteBuffer bufferSchemaId = ByteBuffer.allocate(8);
-		bufferSchemaId.putLong(crc32.getValue());
+		ByteBuffer bufferSchemaId = ByteBuffer.allocate(4);
+		bufferSchemaId.putInt((int) crc32.getValue());
 
 		try {
 			// Writes magic byte
