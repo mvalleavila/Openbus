@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 # ~/camus/
 #		camus.properties
 #		log4j.xml
